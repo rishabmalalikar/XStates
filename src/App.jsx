@@ -48,6 +48,16 @@ function App() {
     }
   }, [state]);
 
+
+  // function selectedLocation() {
+  //   if (country && state && city) {
+  //     return (<div>
+  //     You selected {city}, {state}, {country}
+  //     </div>)
+  //   }
+    
+  // }
+
   return (
     <>
     <div style={{display: 'flex', justifyContent:'center',alignItems: 'center', flexDirection: 'column'}}>
@@ -74,7 +84,8 @@ function App() {
       </select>
 
       
-      <select value={city} onChange={(e) => setCity(e.target.value)}>
+      <select value={city} onChange={(e) =>{setCity(e.target.value);
+     }  }>
         <option value="">Select City</option>
         {cities.map((c) => (
           <option key={c} value={c}>
@@ -83,6 +94,11 @@ function App() {
         ))}
       </select>
     </div>
+    {(country && state && city)? 
+      <div >
+        You selected {city}, {state}, {country}
+      </div>
+     : null }
     </div>
     </>
 
