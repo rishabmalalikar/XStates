@@ -50,9 +50,10 @@ function App() {
 
   return (
     <>
+    <div style={{display: 'flex', justifyContent:'center',alignItems: 'center', flexDirection: 'column'}}>
       <h1>Select Location</h1>
 
-
+    <div>
       <select value={country} onChange={(e) => setCountry(e.target.value)}>
         <option value="">Select Country</option>
         {countries.map((c) => (
@@ -81,7 +82,10 @@ function App() {
           </option>
         ))}
       </select>
+    </div>
+    </div>
     </>
+
   );
 }
 
